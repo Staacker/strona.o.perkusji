@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Strona o Perkusjach</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="coonteiner">
+		<div class="title"><h1>Strona o Perkusji</h1>
+
+			<div class="mySlides fade">
+				<center><img src="pearl.png" style="width: auto; height: 300px;"></center>
+			</div>
+
+			<div class="mySlides fade">
+				<center><img src="pearldb.jpg" style="width: auto; height: 300px;"></center>
+			</div>
+
+			<div class="mySlides fade">
+				<center><img src="tama.png" style="width: auto; height: 300px;"></center>
+			</div>
+
+		   
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<div id="content">
+			<div id="description">
+				<h2>Opis Perkusji</h2>
+				<p>Perkusja to zestaw instrumentów perkusyjnych, które służą do tworzenia rytmicznych dźwięków w muzyce. Zawiera m.in. bębny, talerze oraz inne instrumenty, takie jak bongo czy conga. Jest podstawowym elementem wielu gatunków muzycznych, od rocka po jazz i muzykę klasyczną.</p>
+			</div>
+
+			<div id="history">
+				<h2>Historia Perkusji</h2>
+				<p>Perkusja ma bardzo długą historię, sięgającą czasów starożytnych. Już w starożytnym Egipcie i Grecji używano różnych form bębnów i instrumentów perkusyjnych w rytuałach religijnych i wojennych. Współczesne zestawy perkusyjne ewoluowały w XIX wieku, stając się niezbędnym elementem orkiestry i zespołów muzycznych.</p>
+			</div>
+		</div>
+
+		<div id="companies">
+			<h2>Firmy Produkujące Perkusje</h2>
+			<ul>
+				<li><a href="https://pearldrum.com/eu/">Pearl Drums</a></li>
+				<li><a href="https://www.tama.com/eu/">Tama Drums</a></li>
+				<li><a href="https://pl.yamaha.com/pl/products/musical_instruments/drums/index.html">Yamaha Drums</a></li>
+				<li><a href="https://www.dwdrums.com/">DW Drums</a></li>
+			</ul>
+		</div>
+	</div>
+		<footer>
+			<p>&copy; Drums Info</p>
+		</footer>
+		<script>
+         let slideIndex = 0;
+    showSlides();
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n - 1);
+    }
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (slideIndex >= slides.length) { slideIndex = 0; }
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+
+        // Zmiana slajdów z animacją
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex].style.display = "block";  
+        dots[slideIndex].className += " active";
+    }
+
+    // Automat do zmiany slajdów co 5 sekund
+    setInterval(() => {
+        plusSlides(1);
+    }, 5000);
+    </script>
+</body>
+</html>
